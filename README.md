@@ -4,13 +4,18 @@
 
 ## Button Styles
 
-The included styles show case the different suggested material buttons following a base accent color. Defining custom selector based colors allows correct looking disabled states.
+The included Styles show-case the different suggested material buttons following a defined accent color. Defining custom `selector` based colors allows correct looking disabled states.
+
 
 
 ### Primary Button Style
 
 The primary style (filled & hovering button) comes with a hard-coded grey disabled color (Internally `color/mtrl_btn_bg_color_disabled` used in a selector). 
-In light themes the button active and disabled color can be set using `tint`.
+Note that especially in *Dark Mode* the default disabled colors are hardly readable.
+
+Previous documentation / solutions on the internet stated that the disabled state was defined via `colorButtonNormal`. This is no longer true with the Material Components Button!
+
+The button active and disabled color can instead be overwritten using `tint`. Ensure to provide a `selector color` for a visual different disabled look.
 
 
 ### Secondary Button Style

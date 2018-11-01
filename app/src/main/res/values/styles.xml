@@ -1,14 +1,26 @@
 <resources>
 
     <!-- Light Base application theme -->
+    <!--
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <!-- Define Text colors -->
         <item name="android:textColorPrimary">@color/colorPrimaryTextOnLight</item>
         <item name="android:textColorPrimaryInverse">@color/colorPrimaryTextOnDark</item>
+    </style>
+    -->
+
+    <!-- Dark Base application theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Define Text colors -->
+        <item name="android:textColorPrimary">@color/colorPrimaryTextOnDark</item>
+        <item name="android:textColorPrimaryInverse">@color/colorPrimaryTextOnLight</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
