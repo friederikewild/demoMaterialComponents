@@ -8,6 +8,10 @@ The included Styles show-case the different suggested material buttons following
 
 
 
+<img src="https://github.com/friederikewild/demoMaterialComponents/raw/master/screenshots/buttons_dark.png" width="300" alt="Buttons Light" />  <img src="https://github.com/friederikewild/demoMaterialComponents/raw/master/screenshots/buttons_light.png" width="300" alt="Buttons Dark" />
+
+
+
 ### Primary Button Style
 
 The primary style (filled & hovering button) comes with a hard-coded grey disabled color (Internally `color/mtrl_btn_bg_color_disabled` used in a selector). 
