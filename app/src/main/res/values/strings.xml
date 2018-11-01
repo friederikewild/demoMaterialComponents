@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">DemoMaterialComponents</string>
     <string name="action_settings">Settings</string>
+
+    <string name="label_button_default">Button Style Default</string>
+    <string name="label_button_filled">Button Style Filled</string>
+    <string name="label_button_outline">Button Style Outline</string>
+
+    <string name="generic_action_date_picker">"Pick Date"</string>
+    <string name="generic_action_time_picker">"Pick Time"</string>
+
 </resources>

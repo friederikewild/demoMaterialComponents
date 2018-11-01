@@ -5,8 +5,6 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.google.android.material.snackbar.Snackbar
-
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,10 +15,7 @@ class MainActivity : AppCompatActivity() {
         val toolbarView: Toolbar? = this.findViewById(R.id.toolbar)
         setSupportActionBar(toolbarView)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+        fab.hide()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

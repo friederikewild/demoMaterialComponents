@@ -10,13 +10,124 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalCentre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Default Style section -->
+
+    <TextView
+        android:id="@+id/labelDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_default"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonDefaultActive" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDefaultActive"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dot"
+        android:layout_marginBottom="@dimen/dot_double"
+        app:layout_constraintTop_toBottomOf="@+id/labelDefault"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/verticalCentre"
+        app:layout_constraintBottom_toTopOf="@+id/labelFilled"
+        android:text="@string/generic_action_date_picker"
+        android:enabled="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDefaultDisabled"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dot"
+        android:layout_marginBottom="@dimen/dot_double"
+        app:layout_constraintTop_toBottomOf="@+id/labelDefault"
+        app:layout_constraintStart_toStartOf="@+id/verticalCentre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/labelFilled"
+        android:text="@string/generic_action_date_picker"
+        android:enabled="false" />
+
+
+    <!-- Filled section -->
+
+    <TextView
+        android:id="@+id/labelFilled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_filled"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDefaultActive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFilledActive" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFilledActive"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dot"
+        android:layout_marginBottom="@dimen/dot_double"
+        app:layout_constraintTop_toBottomOf="@+id/labelFilled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/verticalCentre"
+        app:layout_constraintBottom_toTopOf="@+id/labelOutline"
+        android:text="@string/generic_action_date_picker"
+        android:enabled="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonFilledDisabled"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dot"
+        android:layout_marginBottom="@dimen/dot_double"
+        app:layout_constraintTop_toBottomOf="@+id/labelFilled"
+        app:layout_constraintStart_toStartOf="@+id/verticalCentre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/labelOutline"
+        android:text="@string/generic_action_date_picker"
+        android:enabled="false" />
+
+    <!-- Outlined section -->
+
+    <TextView
+        android:id="@+id/labelOutline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_outline"
+        app:layout_constraintTop_toBottomOf="@id/buttonFilledActive"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOutlinedActive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonOutlinedActive"
+        android:layout_marginEnd="@dimen/dot"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelOutline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/verticalCentre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/generic_action_time_picker" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonOutlinedDisabled"
+        android:layout_marginStart="@dimen/dot"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelOutline"
+        app:layout_constraintStart_toStartOf="@+id/verticalCentre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/generic_action_time_picker"
+        android:enabled="false" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
