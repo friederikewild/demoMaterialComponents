@@ -2,11 +2,16 @@
     <string name="app_name">DemoMaterialComponents</string>
     <string name="action_settings">Settings</string>
 
-    <string name="label_button_default">Button Style Default</string>
-    <string name="label_button_filled">Button Style Filled</string>
-    <string name="label_button_outline">Button Style Outline</string>
+    <string name="screen_title">Button Styling</string>
+
+    <string name="label_button_default">Default Button Style</string>
+    <string name="label_button_filled">Custom Style (colorButtonNormal has no effect!)</string>
+    <string name="label_button_tinted">Button Stated Tinted (custom disabled)</string>
+    <string name="label_button_outline">Secondary Button Style / Outlined</string>
+    <string name="label_button_action_text"> Action Text / Tertiary Button Style</string>
 
     <string name="generic_action_date_picker">"Pick Date"</string>
     <string name="generic_action_time_picker">"Pick Time"</string>
+    <string name="generic_action_link">"Example Link"</string>
 
 </resources>

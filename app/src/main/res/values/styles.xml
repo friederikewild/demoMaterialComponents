@@ -1,10 +1,14 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Light Base application theme -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Define Text colors -->
+        <item name="android:textColorPrimary">@color/colorPrimaryTextOnLight</item>
+        <item name="android:textColorPrimaryInverse">@color/colorPrimaryTextOnDark</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -15,5 +19,59 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+
+    <!-- Primary CTA button style -->
+    <style name="AppTheme.ButtonPrimaryAccentStyle" parent="Widget.MaterialComponents.Button">
+        <!-- Use stated button text color including disabled handling -->
+        <item name="android:textColor">@color/btn_text_primary_inverse</item>
+
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>
+    </style>
+
+    <!-- Primary CTA button theme -->
+    <style name="AppTheme.ButtonPrimaryAccentTheme" parent="ThemeOverlay.AppCompat">
+        <!-- Switch normal color which the disabled state is based upon -->
+        <!-- NOTE: This doesn't work anymore with Material Buttons! -->
+        <item name="android:colorButtonNormal">@color/selector_accent</item>
+
+        <!-- Overwriting the accent color in a button specific theme allows different button color -->
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
+    <!-- Primary CTA button style -->
+    <style name="AppTheme.ButtonPrimaryAccentTintedStyle" parent="Widget.MaterialComponents.Button">
+        <!-- Use stated button text color including disabled handling -->
+        <item name="android:textColor">@color/btn_text_primary_inverse</item>
+
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>
+
+        <!-- This way of setting the accent and disabled color works: -->
+        <item name="android:backgroundTint">@color/selector_accent</item>
+    </style>
+
+
+
+    <!-- Secondary CTA button style -->
+    <style name="AppTheme.ButtonSecondaryStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <!-- Set a state aware outline color -->
+        <item name="strokeColor">@color/selector_accent</item>
+
+        <!-- Use stated button text color including disabled handling -->
+        <item name="android:textColor">@color/btn_text_primary</item>
+
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>
+    </style>
+
+
+    <!-- Tertiary Link button style -->
+    <style name="AppTheme.ButtonTertiaryTextStyle" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Button</item>
+        <!-- Use stated button text color including disabled handling -->
+        <item name="android:textColor">@color/selector_accent</item>
+        <item name="iconTint">@color/selector_accent</item>
+
+    </style>
 
 </resources>

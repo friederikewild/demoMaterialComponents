@@ -10,13 +10,13 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/verticalCentre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
 
     <!-- Default Style section -->
 
@@ -48,11 +48,10 @@
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dot"
-        android:layout_marginBottom="@dimen/dot_double"
-        app:layout_constraintTop_toBottomOf="@+id/labelDefault"
+        app:layout_constraintTop_toTopOf="@+id/buttonDefaultActive"
         app:layout_constraintStart_toStartOf="@+id/verticalCentre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/labelFilled"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonDefaultActive"
         android:text="@string/generic_action_date_picker"
         android:enabled="false" />
 
@@ -71,6 +70,8 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFilledActive"
+        style="@style/AppTheme.ButtonPrimaryAccentStyle"
+        android:theme="@style/AppTheme.ButtonPrimaryAccentTheme"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dot"
@@ -78,22 +79,67 @@
         app:layout_constraintTop_toBottomOf="@+id/labelFilled"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/verticalCentre"
-        app:layout_constraintBottom_toTopOf="@+id/labelOutline"
+        app:layout_constraintBottom_toTopOf="@+id/labelTinted"
         android:text="@string/generic_action_date_picker"
         android:enabled="true" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonFilledDisabled"
+        style="@style/AppTheme.ButtonPrimaryAccentStyle"
+        android:theme="@style/AppTheme.ButtonPrimaryAccentTheme"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dot"
-        android:layout_marginBottom="@dimen/dot_double"
-        app:layout_constraintTop_toBottomOf="@+id/labelFilled"
+        app:layout_constraintTop_toTopOf="@+id/buttonFilledActive"
         app:layout_constraintStart_toStartOf="@+id/verticalCentre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/labelOutline"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFilledActive"
         android:text="@string/generic_action_date_picker"
         android:enabled="false" />
+
+
+
+    <!-- Filled section -->
+
+    <TextView
+        android:id="@+id/labelTinted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_tinted"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDefaultActive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTintedActive" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTintedActive"
+        style="@style/AppTheme.ButtonPrimaryAccentTintedStyle"
+        android:theme="@style/AppTheme.ButtonPrimaryAccentTheme"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dot"
+        android:layout_marginBottom="@dimen/dot_double"
+        app:layout_constraintTop_toBottomOf="@+id/labelTinted"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/verticalCentre"
+        app:layout_constraintBottom_toTopOf="@+id/labelOutline"
+        android:text="@string/generic_action_date_picker"
+        android:enabled="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonTintedDisabled"
+        style="@style/AppTheme.ButtonPrimaryAccentTintedStyle"
+        android:theme="@style/AppTheme.ButtonPrimaryAccentTheme"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dot"
+        app:layout_constraintTop_toTopOf="@+id/buttonTintedActive"
+        app:layout_constraintStart_toStartOf="@+id/verticalCentre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonTintedActive"
+        android:text="@string/generic_action_date_picker"
+        android:enabled="false" />
+
 
     <!-- Outlined section -->
 
@@ -102,32 +148,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_button_outline"
-        app:layout_constraintTop_toBottomOf="@id/buttonFilledActive"
+        app:layout_constraintTop_toBottomOf="@id/buttonTintedActive"
         app:layout_constraintBottom_toTopOf="@+id/buttonOutlinedActive"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonOutlinedActive"
+        style="@style/AppTheme.ButtonSecondaryStyle"
         android:layout_marginEnd="@dimen/dot"
+        android:layout_marginBottom="@dimen/dot_double"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/labelOutline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/verticalCentre"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/labelActionText"
         android:text="@string/generic_action_time_picker" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonOutlinedDisabled"
+        style="@style/AppTheme.ButtonSecondaryStyle"
         android:layout_marginStart="@dimen/dot"
         android:layout_width="@dimen/match_constraints"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/labelOutline"
+        app:layout_constraintTop_toTopOf="@id/buttonOutlinedActive"
         app:layout_constraintStart_toStartOf="@+id/verticalCentre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/buttonOutlinedActive"
         android:text="@string/generic_action_time_picker"
+        android:enabled="false" />
+
+
+
+    <!-- Text Only button section -->
+
+    <TextView
+        android:id="@+id/labelActionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_button_action_text"
+        app:layout_constraintTop_toBottomOf="@id/buttonTintedActive"
+        app:layout_constraintBottom_toTopOf="@+id/buttonOutlinedActive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonActionTextActive"
+        style="@style/AppTheme.ButtonTertiaryTextStyle"
+        android:layout_marginEnd="@dimen/dot"
+        android:layout_marginBottom="@dimen/dot_double"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelActionText"
+        app:layout_constraintEnd_toStartOf="@+id/verticalCentre"
+        android:text="@string/generic_action_link"
+        app:icon="@drawable/ic_info_outline_24dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonActionTextDisabled"
+        style="@style/AppTheme.ButtonTertiaryTextStyle"
+        android:layout_marginStart="@dimen/dot"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/buttonActionTextActive"
+        app:layout_constraintStart_toStartOf="@+id/verticalCentre"
+        app:layout_constraintBottom_toBottomOf="@id/buttonActionTextActive"
+        android:text="@string/generic_action_link"
+        app:icon="@drawable/ic_info_outline_24dp"
         android:enabled="false" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
